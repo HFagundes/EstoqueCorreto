@@ -20,20 +20,20 @@ public partial class MainForm : Form
         this.Size = new System.Drawing.Size(800, 600);
         this.StartPosition = FormStartPosition.CenterScreen;
 
-        // TabControl para organizar as funcionalidades
+      
         TabControl tabControl = new TabControl();
         tabControl.Dock = DockStyle.Fill;
         tabControl.SelectedIndexChanged += TabControl_SelectedIndexChanged;
 
-        // Aba de Listagem
+     
         TabPage tabListagem = new TabPage("Listagem de Produtos");
         tabListagem.BackColor = SystemColors.Control;
         
-        // Aba de Cadastro
+    
         TabPage tabCadastro = new TabPage("Cadastrar Produto");
         tabCadastro.BackColor = SystemColors.Control;
         
-        // Aba de Gerenciar Estoque
+
         TabPage tabEstoque = new TabPage("Gerenciar Estoque");
         tabEstoque.BackColor = SystemColors.Control;
 
@@ -41,13 +41,13 @@ public partial class MainForm : Form
         tabControl.TabPages.Add(tabCadastro);
         tabControl.TabPages.Add(tabEstoque);
 
-        // Configuração da aba de Listagem
+  
         ConfigurarAbaListagem(tabListagem);
         
-        // Configuração da aba de Cadastro
+     
         ConfigurarAbaCadastro(tabCadastro);
         
-        // Configuração da aba de Estoque
+     
         ConfigurarAbaEstoque(tabEstoque);
 
         this.Controls.Add(tabControl);
@@ -55,7 +55,7 @@ public partial class MainForm : Form
 
     private void ConfigurarAbaListagem(TabPage tabPage)
     {
-        // Botão Atualizar
+
         Button btnAtualizar = new Button();
         btnAtualizar.Text = "Atualizar Lista";
         btnAtualizar.Location = new System.Drawing.Point(10, 10);
@@ -76,17 +76,17 @@ public partial class MainForm : Form
 
     private void ConfigurarAbaCadastro(TabPage tabPage)
     {
-        // Labels
+  
         Label lblNome = new Label() { Text = "Nome:", Location = new System.Drawing.Point(20, 20), Size = new System.Drawing.Size(100, 20) };
         Label lblPreco = new Label() { Text = "Preço:", Location = new System.Drawing.Point(20, 60), Size = new System.Drawing.Size(100, 20) };
         Label lblQuantidade = new Label() { Text = "Quantidade:", Location = new System.Drawing.Point(20, 100), Size = new System.Drawing.Size(100, 20) };
 
-        // TextBoxes
+ 
         TextBox txtNome = new TextBox() { Location = new System.Drawing.Point(120, 20), Size = new System.Drawing.Size(200, 20) };
         TextBox txtPreco = new TextBox() { Location = new System.Drawing.Point(120, 60), Size = new System.Drawing.Size(100, 20) };
         TextBox txtQuantidade = new TextBox() { Location = new System.Drawing.Point(120, 100), Size = new System.Drawing.Size(100, 20) };
 
-        // Botão Cadastrar
+ 
         Button btnCadastrar = new Button();
         btnCadastrar.Text = "Cadastrar Produto";
         btnCadastrar.Location = new System.Drawing.Point(120, 140);
@@ -117,15 +117,15 @@ public partial class MainForm : Form
 
     private void ConfigurarAbaEstoque(TabPage tabPage)
     {
-        // Labels
+
         Label lblId = new Label() { Text = "ID do Produto:", Location = new System.Drawing.Point(20, 20), Size = new System.Drawing.Size(100, 20) };
         Label lblQuantidade = new Label() { Text = "Quantidade:", Location = new System.Drawing.Point(20, 60), Size = new System.Drawing.Size(100, 20) };
 
-        // TextBoxes
+
         TextBox txtId = new TextBox() { Location = new System.Drawing.Point(120, 20), Size = new System.Drawing.Size(100, 20) };
         TextBox txtQuantidade = new TextBox() { Location = new System.Drawing.Point(120, 60), Size = new System.Drawing.Size(100, 20) };
 
-        // Botões
+
         Button btnIncrementar = new Button();
         btnIncrementar.Text = "Incrementar Estoque";
         btnIncrementar.Location = new System.Drawing.Point(120, 100);
@@ -162,7 +162,7 @@ public partial class MainForm : Form
             }
         };
 
-        // Label de informações
+  
         Label lblInfo = new Label();
         lblInfo.Text = "Observação: Use a aba de Listagem para ver os IDs dos produtos";
         lblInfo.Location = new System.Drawing.Point(20, 150);
@@ -180,7 +180,7 @@ public partial class MainForm : Form
             var produtos = repository.ListarProdutos();
             dataGridViewProdutos.DataSource = produtos;
             
-            // Configurar cabeçalhos das colunas
+   
             if (dataGridViewProdutos.Columns.Count > 0)
             {
                 dataGridViewProdutos.Columns["IdProduto"].HeaderText = "ID";
